@@ -1,0 +1,25 @@
+#!/bin/bash
+
+DEPRECATIONS_AS_ERRORS="false"
+
+bin/php-cs-fixer fix
+
+PATH="bin:vendor/bin:$HOME/.composer/vendor/bin:/usr/local/bin:$PATH"
+
+if [[ ! -x $(which phpunit) ]]; then
+    echo "You must install phpunit in your \$PATH"
+    exit 1;
+fi
+
+if [ "$DEPRECATIONS_AS_ERRORS" != "true" ]; then
+  export SYMFONY_DEPRECATIONS_HELPER=weak
+fi
+phpunit
+retval=$?
+
+if [[ $retval != 0 ]]; then
+    echo
+    echo "ERROR: You have broken PHPUnit tests. You must fix them before pushing!"
+    echo
+    exit 1;
+fi
