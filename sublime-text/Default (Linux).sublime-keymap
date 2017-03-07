@@ -8,5 +8,6 @@
     { "keys": ["ctrl+down"], "command": "goto_definition_scope" },
     { "keys": ["ctrl+up"], "command": "expand_region" },
     { "keys": ["ctrl+x", "ctrl+f"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
-    { "keys": ["ctrl+k"], "command": "toggle_side_bar" }
+    { "keys": ["ctrl+k"], "command": "toggle_side_bar" },
+    { "keys": ["ctrl+shift+l"], "caption": "File: Delete", "command": "side_bar_delete" }
 ]
