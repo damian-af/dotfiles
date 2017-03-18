@@ -5,5 +5,7 @@
     { "keys": ["ctrl+up"], "command": "expand_region" },
     { "keys": ["ctrl+x", "ctrl+f"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
     { "keys": ["ctrl+k"], "command": "toggle_side_bar" },
-    { "keys": ["ctrl+x", "ctrl+s"], "command": "save" }
+    { "keys": ["ctrl+x", "ctrl+s"], "command": "save" },
+    { "keys": ["ctrl+shift+-"], "command": "toggle_comment", "args": { "block": false } },
+    { "keys": ["ctrl+g"], "command": "find_all_under" }
 ]
